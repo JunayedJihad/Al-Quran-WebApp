@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+img {
+  max-width: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+#container {
+  position: relative;
+  background-color: #fff;
+  height: 80vh;
+  width: 400px;
+  overflow-y: scroll;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 40px -20px rgba(0, 0, 0, 0.2);
+}
+#container::-webkit-scrollbar {
+  display: none;
+}
+#title {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  text-align: center;
+  letter-spacing: 8px;
+  height: 5vh;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem;
+  background-color: aliceblue;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.no {
+  font-weight: 600;
+  background-color: #ecf0f1;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info h5 {
+  color: #34495e;
+  margin-bottom: 0;
+}
+.info p {
+  color: #bdc3c7;
+  margin-bottom: 0;
+}
+.card-right {
+}
+.card-right h4 {
+  color: #34495e;
+  font-weight: 400;
+}
+
+
+/* Each surah */
+
+.suraInfo{
+    flex-direction: column;
+}
+.suraInfo h6{
+    color: rgba(0, 0, 0, 0.3);
+}
+.ayat-source{
+    display: flex;
+    gap: 4rem;
+}
+.suraCard {
+  flex-direction: column;
+}
+.ayat{
+  font-weight: 700;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+.icon{
+    color: #34495e;
+    font-size: 1.4rem;
+}
+.arabic {
+  align-self: flex-end;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+.transliteration {
+  padding-top: 0.6rem;
+  margin-bottom: .6rem;
+    font-size: .7rem;
+
+    align-self:flex-start
+}
+.meaning {
+    font-size: .8rem;
+        align-self:flex-start
+}
+
+#audio{
+  width: 100%;
+  
+}
