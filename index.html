@@ -3,14 +3,14 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Quran App</title>
+    <title>Al-Quran WebApp</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' integrity='sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==' crossorigin='anonymous'/>
     <link rel="shortcut icon" href="./pngimg.com - quran_PNG6.png" type="image/x-icon">
     <link rel='stylesheet' href='./style.css'>
 </head>
 <body>
-    <h1 id="title">Al-Quran</h1>
+    <h1 id="title">Al-Quran WebApp</h1>
     <main id="container">
 
         <!-- <div class="card suraInfo">
@@ -39,17 +39,30 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="stopAudio()"></button>
-      </div>
-      <div class="modal-body">
-        <audio controls autoplay preload="none" id="audio"></audio>
 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="stopAudio()"></button>
+            </div>
+            <div class="modal-body">
+                <audio controls autoplay preload="none" id="audio"></audio>
+            </div>
+        </div>
+    </div>
 
-      </div>
+</div>
+
+ <div class="warning card py-5 " id="warning">
+        <h3 class="display-4 mb-5 ">Al-Quran WebApp</h3>
+        <p class="text-danger  ">Do not touch the Arabic Ayats directly without Wudu !!!</>
+        <p class="text">Click on any Sura to open it </p>
+        <p class="text ">Double click on any ayat of the sura to return to the home page</p>
+        <span id="close"><i class="fa-solid fa-circle-xmark"></i></span>
+        <span>___Code by <a href="https://www.facebook.com/junayedjihad01">Junayed Jihad</a></span>
+ </div>
+
 
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js' integrity='sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A==' crossorigin='anonymous'></script>

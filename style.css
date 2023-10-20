@@ -19,11 +19,32 @@ body {
   height: 100vh;
   font-family: "Poppins", sans-serif;
 }
+.warning{
+  z-index:999;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+#close{
+  font-size: 2rem;
+  color: #34495e;
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  cursor: pointer;
+}
 #container {
   position: relative;
   background-color: #fff;
   height: 80vh;
-  width: 400px;
+  width: 375px;
   overflow-y: scroll;
   padding: 1rem;
   border-radius: 10px;
@@ -101,6 +122,22 @@ body {
 }
 .suraCard {
   flex-direction: column;
+  position: relative;
+}
+.sajda{
+  font-size: .6rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+
+  animation:dance 1.5s linear infinite forwards;
+
+}
+@keyframes dance{
+  0%{transform: scale(1) translateX(-50%);}
+  50%{transform: scale(1.1) translateX(-50%)}
+  100%{transform: scale(1) translateX(-50%)}
 }
 .ayat{
   font-weight: 700;
