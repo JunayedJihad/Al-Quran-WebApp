@@ -72,10 +72,12 @@ body {
 .info h5 {
   color: #34495e;
   margin-bottom: 0;
+  font-size: 1.1rem;
 }
 .info p {
   color: #bdc3c7;
   margin-bottom: 0;
+  font-size: .8rem;
 }
 .card-right {
 }
@@ -131,5 +133,5 @@ body {
 
 #audio{
   width: 100%;
-  
+
 }

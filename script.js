@@ -1,5 +1,5 @@
 let container = document.getElementById("container");
- let ayatInfo = "";
+//  let ayatInfo = "";
  let audioAyats = [];
 let ayatNo = [];
 
@@ -13,7 +13,7 @@ function bringModal(number) {
     }
 
 async function bringSura(no) {
-    // let ayatInfo = "";
+    let ayatInfo = "";
     // let audioAyats = [];
     // let ayatNo = [];
 
@@ -46,6 +46,7 @@ async function bringSura(no) {
 
         audioAyats.push(verse.audio.primary)
         ayatNo.push(verse.number.inSurah);
+
         ayatInfo += `
             <div class="card suraCard" ondblclick="bringSuraList()">
             <div class="ayat">
