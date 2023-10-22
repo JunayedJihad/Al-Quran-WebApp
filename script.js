@@ -1,31 +1,34 @@
 let container = document.getElementById("container");
 
- let audioAyats = [];
+let audioAyats = [];
 let ayatNo = [];
 
-document.getElementById('close').addEventListener("click", () => {
-    document.getElementById("warning").remove()
-})
+document.getElementById("close").addEventListener("click", () => {
+  document.getElementById("warning").remove();
+});
 
 function stopAudio() {
-    document.getElementById("audio").pause();
+  document.getElementById("audio").pause();
 }
 
 function bringModal(number) {
-        document.getElementById('staticBackdropLabel').innerHTML = `Ayat no ${number}`
-        document.getElementById('audio').src=audioAyats[number-1]
+  document.getElementById(
+    "staticBackdropLabel"
+  ).innerHTML = `Ayat no ${number}`;
+  document.getElementById("audio").src = audioAyats[number - 1];
 }
 
 async function bringSura(no) {
-    let ayatInfo = "";
+  let ayatInfo = "";
 
-    let suraLink = `https://api.quran.gading.dev/surah/${no}`;
-    let suraResponse = await fetch(suraLink);
-      suraResponse = await suraResponse.json();
+  audioAyats = [];
+  ayatNo = [];
 
+  let suraLink = `https://api.quran.gading.dev/surah/${no}`;
+  let suraResponse = await fetch(suraLink);
+  suraResponse = await suraResponse.json();
 
-
-      let suraInfo = `
+  let suraInfo = `
        <div class="card suraInfo" ondblclick="bringSuraList()">
               <h4>${suraResponse.data.name.long}</h4>
               <h5>${suraResponse.data.name.transliteration.en}</h5>
@@ -40,15 +43,14 @@ async function bringSura(no) {
 
       `;
 
-      suraResponse.data.verses.forEach((verse) => {
+  suraResponse.data.verses.forEach((verse) => {
+    audioAyats.push(verse.audio.primary);
+    ayatNo.push(verse.number.inSurah);
 
-          audioAyats.push(verse.audio.primary)
-          ayatNo.push(verse.number.inSurah);
+    if (verse.meta.sajda.recommended || verse.meta.sajda.obligatory) {
+      let sajda = "Sajda";
 
-            if (verse.meta.sajda.recommended || verse.meta.sajda.obligatory) {
-                let sajda = "Sajda";
-
-                 ayatInfo += `
+      ayatInfo += `
               <div class="card suraCard" ondblclick="bringSuraList()">
               <div class="ayat">
                   <span>${verse.number.inSurah}</span>
@@ -62,10 +64,8 @@ async function bringSura(no) {
           </div>
 
           `;
-
-          }
-            else {
-                 ayatInfo += `
+    } else {
+      ayatInfo += `
               <div class="card suraCard" ondblclick="bringSuraList()">
               <div class="ayat">
                   <span>${verse.number.inSurah}</span>
@@ -78,21 +78,15 @@ async function bringSura(no) {
           </div>
 
           `;
-          }
-
-
-        })
-        container.innerHTML = `
+    }
+  });
+  container.innerHTML = `
         ${suraInfo}
         ${ayatInfo}
         `;
-
-
-
-
 }
 
-let bringSuraList= async () => {
+let bringSuraList = async () => {
   try {
     let response = await fetch("https://api.quran.gading.dev/surah");
     response = await response.json();
@@ -117,8 +111,8 @@ let bringSuraList= async () => {
 
     container.innerHTML = suraList;
   } catch {
-      alert('Something went wrong')
-      throw new Error("Something went wrong!");
+    alert("Something went wrong");
+    throw new Error("Something went wrong!");
   }
-}
-bringSuraList()
+};
+bringSuraList();
